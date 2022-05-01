@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://levels/game_complete.gd" type="Script" id=1]
+[ext_resource path="res://assets/tiles/BG color purple.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/number_level_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/number_level_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/number_level_3.png" type="Texture" id=5]
+
+[node name="game_complete" type="CanvasLayer"]
+script = ExtResource( 1 )
+level_name = "game_complete"
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 321, 179.5 )
+scale = Vector2( 1.01094, 1.00833 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 290.0
+margin_top = 41.0
+margin_right = 380.0
+margin_bottom = 55.0
+text = "You win!"
+
+[node name="level_1" type="Sprite" parent="."]
+position = Vector2( 185, 157 )
+texture = ExtResource( 4 )
+
+[node name="level_2" type="Sprite" parent="."]
+position = Vector2( 186, 220 )
+texture = ExtResource( 3 )
+
+[node name="level_3" type="Sprite" parent="."]
+position = Vector2( 186, 283 )
+texture = ExtResource( 5 )
+
+[node name="time_1" type="Label" parent="."]
+margin_left = 251.0
+margin_top = 150.0
+margin_right = 291.0
+margin_bottom = 164.0
+
+[node name="time_2" type="Label" parent="."]
+margin_left = 250.0
+margin_top = 212.0
+margin_right = 290.0
+margin_bottom = 226.0
+
+[node name="time_3" type="Label" parent="."]
+margin_left = 249.0
+margin_top = 276.0
+margin_right = 289.0
+margin_bottom = 290.0
+
+[node name="total_time" type="Label" parent="."]
+margin_left = 389.0
+margin_top = 93.0
+margin_right = 429.0
+margin_bottom = 107.0

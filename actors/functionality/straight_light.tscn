@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/lights/cinema_projector_light/light2.png" type="Texture" id=2]
+[ext_resource path="res://assets/lights/cinema_projector_light/light4.png" type="Texture" id=3]
+[ext_resource path="res://assets/lights/cinema_projector_light/light5.png" type="Texture" id=4]
+[ext_resource path="res://assets/lights/cinema_projector_light/light.png" type="Texture" id=5]
+[ext_resource path="res://assets/lights/cinema_projector_light/light3.png" type="Texture" id=6]
+[ext_resource path="res://actors/functionality/straight_light.gd" type="Script" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="straight_light" type="Light2D"]
+texture = ExtResource( 2 )
+texture_scale = 0.5
+color = Color( 0.992157, 1, 0.698039, 1 )
+energy = 1.55
+shadow_enabled = true
+shadow_item_cull_mask = 3
+script = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.5 )
+frames = SubResource( 1 )
+frame = 3
+playing = true

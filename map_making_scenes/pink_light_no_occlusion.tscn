@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/lights/light.png" type="Texture" id=1]
+
+[node name="pink_light" type="Light2D"]
+texture = ExtResource( 1 )
+texture_scale = 0.75
+color = Color( 1, 0.611765, 0.968627, 1 )
+energy = 0.62
+shadow_enabled = true
+shadow_item_cull_mask = 0

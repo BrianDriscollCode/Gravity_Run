@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://goal_post.gd" type="Script" id=1]
+[ext_resource path="res://assets/interactive/goal_post4.png" type="Texture" id=2]
+[ext_resource path="res://assets/interactive/goal_post5.png" type="Texture" id=3]
+[ext_resource path="res://assets/interactive/goal_post8.png" type="Texture" id=4]
+[ext_resource path="res://assets/interactive/goal_post6.png" type="Texture" id=5]
+[ext_resource path="res://assets/interactive/goal_post2.png" type="Texture" id=6]
+[ext_resource path="res://assets/interactive/goal_post7.png" type="Texture" id=7]
+[ext_resource path="res://assets/interactive/goal_post1.png" type="Texture" id=8]
+[ext_resource path="res://assets/interactive/goal_post3.png" type="Texture" id=9]
+[ext_resource path="res://assets/lights/light.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "change",
+"speed": 11.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1, 24 )
+
+[node name="goal_post" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite"]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, -20 )
+enabled = false
+texture = ExtResource( 10 )
+color = Color( 1, 0.0588235, 0.85098, 1 )
+
+[connection signal="area_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_area_entered"]

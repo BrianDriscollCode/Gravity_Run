@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://map_making_scenes/pink_light_no_occlusion.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/functionality/Camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/main_player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://map_making_scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://map_making_scenes/interactive/portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/tiles/BG color purple.png" type="Texture" id=6]
+
+[node name="level_starter_name" type="Node2D"]
+
+[node name="purple_background" type="Sprite" parent="."]
+position = Vector2( 356, 164 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 6 )
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3, 0 )
+collision_layer = 2
+tile_data = PoolIntArray( -655266, 1, 0, -327575, 1, 0, 65536, 9, 0, 65537, 9, 0, 65538, 9, 0, 65539, 9, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 655360, 1, 0, 655361, 1, 0, 655362, 1, 0, 655363, 1, 0 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="TileMap"]
+color = Color( 1, 0.984314, 0.603922, 1 )
+
+[node name="Portal" parent="TileMap" instance=ExtResource( 5 )]
+position = Vector2( 3104, 225 )
+
+[node name="Actors" type="Node2D" parent="."]
+position = Vector2( 2549, 18 )
+scale = Vector2( 10, 10 )
+z_index = 6
+
+[node name="Camera" parent="Actors" instance=ExtResource( 2 )]
+TargetNodepath = NodePath("../main_player")
+
+[node name="main_player" parent="Actors" instance=ExtResource( 3 )]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+show_behind_parent = true
+position = Vector2( -250, 22.1 )
+scale = Vector2( 0.1, 0.1 )
+z_index = 5
+
+[node name="lights" type="Node2D" parent="."]
+
+[node name="pink_light" parent="lights" instance=ExtResource( 1 )]
+position = Vector2( 1367.5, 276 )
+scale = Vector2( 8.28613, 2.51953 )
+texture_scale = 2.0

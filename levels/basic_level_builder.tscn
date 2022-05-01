@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://map_making_scenes/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/main_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/functionality/Camera.tscn" type="PackedScene" id=3]
+
+[node name="level_3" type="Node2D"]
+
+[node name="actors" type="Node2D" parent="."]
+position = Vector2( 77, 234 )
+
+[node name="main_player" parent="actors" instance=ExtResource( 2 )]
+
+[node name="Camera" parent="actors" instance=ExtResource( 3 )]
+TargetNodepath = NodePath("../main_player")
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
