@@ -57,3 +57,12 @@ margin_left = 389.0
 margin_top = 93.0
 margin_right = 429.0
 margin_bottom = 107.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 373.0
+margin_top = 179.0
+margin_right = 573.0
+margin_bottom = 259.0
+text = "Try again?"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

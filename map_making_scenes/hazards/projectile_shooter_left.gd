@@ -6,7 +6,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	var my_random_number = rng.randf_range(0.5, 3.0)
+	var my_random_number = rng.randf_range(2.5, 4.5)
 	#starts platform movement at different times so they are not uniform
 	bullet_timer.set_wait_time(my_random_number)
 	bullet_timer.start()
@@ -18,7 +18,7 @@ func _on_bullet_timer_timeout():
 	get_tree().get_root().add_child(bullet_instance)
 	
 	rng.randomize()
-	var my_random_number = rng.randf_range(0.5, 3.0)
+	var my_random_number = rng.randf_range(2.5, 4.5)
 	#starts platform movement at different times so they are not uniform
 	bullet_timer.set_wait_time(my_random_number)
 	bullet_timer.start()

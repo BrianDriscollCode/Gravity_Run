@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scene_switcher.gd" type="Script" id=1]
 [ext_resource path="res://levels/start_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/music/gravity_run_theme_mixdown.mp3" type="AudioStream" id=3]
 
 [node name="scene_switcher" type="Node"]
 script = ExtResource( 1 )
 
 [node name="start_menu" parent="." instance=ExtResource( 2 )]
 level_name = "start_screen"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

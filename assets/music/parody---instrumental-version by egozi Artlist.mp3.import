@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/parody---instrumental-version by egozi Artlist.mp3-39f5a64d112ca7c55238f352721b28a8.mp3str"
+
+[deps]
+
+source_file="res://assets/music/parody---instrumental-version by egozi Artlist.mp3"
+dest_files=[ "res://.import/parody---instrumental-version by egozi Artlist.mp3-39f5a64d112ca7c55238f352721b28a8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

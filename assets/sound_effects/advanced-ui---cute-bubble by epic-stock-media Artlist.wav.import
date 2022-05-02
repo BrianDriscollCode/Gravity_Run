@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/advanced-ui---cute-bubble by epic-stock-media Artlist.wav-88402369fdf9a6c06f8823acd60999d9.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/advanced-ui---cute-bubble by epic-stock-media Artlist.wav"
+dest_files=[ "res://.import/advanced-ui---cute-bubble by epic-stock-media Artlist.wav-88402369fdf9a6c06f8823acd60999d9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

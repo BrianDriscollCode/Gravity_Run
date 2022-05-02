@@ -26,4 +26,8 @@ func print_level_info():
 func track_level():
 	pass
 	
+func reset_level_tracker():
+	level_tracker = 0
+	level_completion = [ "incomplete", "incomplete", "incomplete"]
+	level_times = ["to be added", "to be added", "to be added"] 
 

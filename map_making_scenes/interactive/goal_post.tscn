@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://goal_post.gd" type="Script" id=1]
 [ext_resource path="res://assets/interactive/goal_post4.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/interactive/goal_post1.png" type="Texture" id=8]
 [ext_resource path="res://assets/interactive/goal_post3.png" type="Texture" id=9]
 [ext_resource path="res://assets/lights/light.png" type="Texture" id=10]
+[ext_resource path="res://assets/sound_effects/mobile-game---interface-option-click-selection-melodic by j.bob Artlist.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -49,5 +50,10 @@ position = Vector2( 0, -20 )
 enabled = false
 texture = ExtResource( 10 )
 color = Color( 1, 0.0588235, 0.85098, 1 )
+
+[node name="up_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -10.0
+pitch_scale = 0.9
 
 [connection signal="area_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_area_entered"]

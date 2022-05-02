@@ -17,7 +17,6 @@ func _process(delta):
 		time_start_taken = true
 	time_now = OS.get_ticks_msec()
 	time_elapsed = (time_now - time_start)/1000
-	print(time_elapsed)
 
 func next_level():
 	

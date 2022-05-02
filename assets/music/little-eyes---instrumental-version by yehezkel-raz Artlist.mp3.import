@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/little-eyes---instrumental-version by yehezkel-raz Artlist.mp3-dcb195d35a85e581361238d714b739bc.mp3str"
+
+[deps]
+
+source_file="res://assets/music/little-eyes---instrumental-version by yehezkel-raz Artlist.mp3"
+dest_files=[ "res://.import/little-eyes---instrumental-version by yehezkel-raz Artlist.mp3-dcb195d35a85e581361238d714b739bc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

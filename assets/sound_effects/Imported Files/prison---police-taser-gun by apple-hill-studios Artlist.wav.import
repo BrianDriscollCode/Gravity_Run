@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/prison---police-taser-gun by apple-hill-studios Artlist.wav-4140deff2c8d19d7ec6d4f36b1098c11.sample"
+
+[deps]
+
+source_file="res://assets/sound_effects/Imported Files/prison---police-taser-gun by apple-hill-studios Artlist.wav"
+dest_files=[ "res://.import/prison---police-taser-gun by apple-hill-studios Artlist.wav-4140deff2c8d19d7ec6d4f36b1098c11.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

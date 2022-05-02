@@ -34,5 +34,7 @@ func _ready():
 func next_level():
 	get_tree().call_group("player", "signal_player_death")
 	emit_signal("level_changed", level_name)
-	
-	
+
+func _on_Button_pressed():
+	get_tree().get_root().get_node("GameInfo").reset_level_tracker()
+	emit_signal("level_changed", level_name)

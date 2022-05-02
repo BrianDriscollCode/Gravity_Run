@@ -24,7 +24,7 @@ script = ExtResource( 7 )
 position = Vector2( 11, 0 )
 rotation = -3.14159
 frames = SubResource( 1 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="laser_bullet_right" parent="." instance=ExtResource( 8 )]

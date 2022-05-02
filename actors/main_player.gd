@@ -20,6 +20,12 @@ onready var right_beam = $right_beam
 onready var left_beam = $left_beam
 onready var up_beam = $up_beam
 
+var death_sound_active = false
+
+var gravity_sound_on_cooldown = false
+onready var beam_sound_cooldown = $beam_sound/cooldown_timer
+onready var beam_sound = $beam_sound
+
 func _ready():
 	set_ressurection_location()
 
@@ -53,6 +59,7 @@ func basic_movement():
 		character_motion.y = -JUMP_SPEED
 		jump_gravity_increment = 5
 		apply_gravity = true
+		$jump_sound._set_playing(true)
 	elif is_on_floor():
 		jump_gravity_increment = 5
 	else: 
@@ -65,27 +72,27 @@ func basic_movement():
 
 func set_animation(setting):
 	
-	if setting == "right" and Input.is_action_pressed("gravity_gun"):
+	if setting == "right" and Input.is_action_pressed("gravity_gun") and alive:
 		character_animation.set_animation("default")
 		character_animation._set_playing(false)
 		character_animation.set_flip_h(false)
-	elif setting == "left" and Input.is_action_pressed("gravity_gun"):
+	elif setting == "left" and Input.is_action_pressed("gravity_gun") and alive:
 		character_animation.set_animation("default")
 		character_animation._set_playing(false)
 		character_animation.set_flip_h(true)
-	elif setting == "right":
+	elif setting == "right" and alive:
 		character_animation.set_animation("run")
 		character_animation._set_playing(true)
 		character_animation.set_flip_h(false)
-	elif setting == "left":
+	elif setting == "left" and alive:
 		character_animation.set_animation("run")
 		character_animation._set_playing(true)
 		character_animation.set_flip_h(true)
-	elif setting == "up":
+	elif setting == "up" and alive:
 		character_animation.set_animation("default")
 		character_motion.x = 0
 		character_animation.set_frame(1)
-	else:
+	elif alive:
 		character_animation.set_animation("default")
 		character_animation._set_playing(false)
 
@@ -95,6 +102,22 @@ func set_character_direction(setting):
 
 func activate_gravity_gun():
 	
+	#Toggling sound
+	if Input.is_action_pressed("gravity_gun") and gravity_sound_on_cooldown == false:
+		
+		if gravity_sound_on_cooldown == false:
+			beam_sound._set_playing(true)
+			gravity_sound_on_cooldown = true
+		#print("set playing")
+	elif Input.is_action_just_released("gravity_gun"):
+		beam_sound._set_playing(false)
+		beam_sound_cooldown.start()
+		#print("set non playing")
+	else:
+		pass
+		#print("pass")
+		
+	#Toggling the gravity and animation
 	if Input.is_action_pressed("gravity_gun") and character_direction == "right":
 		right_beam.set_visible(true)
 	
@@ -116,7 +139,12 @@ func activate_gravity_gun():
 		up_beam.set_visible(false)
 		apply_gravity = true
 
-#toggling based on player actions
+#For beam_sound
+func _on_cooldown_timer_timeout():
+	gravity_sound_on_cooldown = false
+	print('beam cooldown popped')
+
+#toggling collisions based on player actions
 func set_beam_collisions():
 	
 	if Input.is_action_pressed("gravity_gun") and character_direction == "up":
@@ -154,11 +182,18 @@ func check_death_collisions():
 #player has died, starting revive process
 func signal_player_death():
 	alive = false
-	revive_timer.start()
+	character_animation.set_animation("electrocuted")
+	character_animation._set_playing(true)
+	
+	if death_sound_active == false:
+		play_death_sound()
+		revive_timer.start()
+		death_sound_active = true
 	
 #revives at specified ressurect location		
 func _on_revive_timer_timeout():
 	alive = true
+	death_sound_active = false
 	self.position = current_ressurect_location
 	character_motion.y = 0
 	
@@ -177,8 +212,11 @@ func _on_interactive_area2D_area_entered(area):
 		alive = false
 		signal_player_death()
 		print("player death script active")
-		
-			
 	
+func play_death_sound():
+	$death_sound.play()
+	print("play_death_sound")
 	
-	
+
+
+

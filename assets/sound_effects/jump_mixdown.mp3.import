@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jump_mixdown.mp3-67a690d214f30c8d5fc64491ed28d352.mp3str"
+
+[deps]
+
+source_file="res://assets/sound_effects/jump_mixdown.mp3"
+dest_files=[ "res://.import/jump_mixdown.mp3-67a690d214f30c8d5fc64491ed28d352.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

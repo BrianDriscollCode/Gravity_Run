@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gravity_beam_run_mixdown_v2.mp3-d9489151618c32bdc16e6934761586ca.mp3str"
+
+[deps]
+
+source_file="res://assets/sound_effects/gravity_beam_run_mixdown_v2.mp3"
+dest_files=[ "res://.import/gravity_beam_run_mixdown_v2.mp3-d9489151618c32bdc16e6934761586ca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

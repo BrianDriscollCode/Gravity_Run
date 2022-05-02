@@ -19,6 +19,8 @@ func handle_level_changed(current_level_name: String):
 			next_level_name = "level_3"
 		"level_3":
 			next_level_name = "game_complete"
+		"game_complete":
+			next_level_name = "level_1"
 		_:
 			return
 			

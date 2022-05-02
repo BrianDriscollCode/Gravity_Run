@@ -4,12 +4,17 @@ var number = 0
 onready var animation = $AnimatedSprite
 onready var light = $Light2D
 
+var goal_post_done = false
+
 var is_player_saved = false
 
 func _physics_process(_delta):
-	if animation.get_frame() == 6:
+	if animation.get_frame() == 6 and goal_post_done == false:
 		animation.set_animation("up")
 		is_player_saved = true
+		goal_post_done = true
+		$up_sound._set_playing(true)
+		
 		
 	if is_player_saved == true:
 		light.set_enabled(true)

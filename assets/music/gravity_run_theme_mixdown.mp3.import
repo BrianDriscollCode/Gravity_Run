@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gravity_run_theme_mixdown.mp3-711c26f07a0cf4e75092b6f7ca235874.mp3str"
+
+[deps]
+
+source_file="res://assets/music/gravity_run_theme_mixdown.mp3"
+dest_files=[ "res://.import/gravity_run_theme_mixdown.mp3-711c26f07a0cf4e75092b6f7ca235874.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
